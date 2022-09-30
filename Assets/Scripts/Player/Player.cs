@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private RepairButton _repairButton;
 
     private int _walletMoney = 0;
+    
     public event Action<int> ChangedWallet;
     public event Action<bool> MoneyForRepair;
 

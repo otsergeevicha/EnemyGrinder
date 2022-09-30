@@ -14,7 +14,6 @@ public class Gate : MonoBehaviour
         if(other.TryGetComponent<Enemy>(out Enemy enemy))
         {
             ApplyDamage(enemy.Damage);
-            Debug.Log(_currentHealth);
             ChangedHealth?.Invoke(_currentHealth, _maxHealth);
             enemy.gameObject.SetActive(false);
         }

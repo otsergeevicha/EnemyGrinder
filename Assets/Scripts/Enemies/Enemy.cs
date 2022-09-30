@@ -9,10 +9,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyMovement _enemyMovement;
     [SerializeField] private RagdollControl _ragControl;
     [SerializeField] private Animator _animator;
+    [SerializeField] private ParticleSystem _hitEffect;
 
+    public Transform Target;
+    
     public int Price {get; private set;} = 1;
     public int Damage {get; private set;} = 1;
-    public Transform Target;
 
     private void Start()
     {
@@ -22,10 +24,11 @@ public class Enemy : MonoBehaviour
 
     public void ChangeStatus()
     {
+        _hitEffect.Play();
         _enemyMovement.UnMove();
         _animator.enabled = false;
         _ragControl.ChangePhysical(false);
-        Invoke("Off", .5f);
+        Invoke(nameof(Off), .5f);
     }
 
     private void Off()
