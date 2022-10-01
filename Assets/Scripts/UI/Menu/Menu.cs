@@ -7,19 +7,16 @@ public class Menu : MonoBehaviour
         ViewMenu(false);
     }
 
-    public void GameManager(int status)
+    public void Play(int value)
     {
-        if(status == 0)
-        {
-            ViewMenu(true);
-            Time.timeScale = status;
-        }
+        ViewMenu(false);
+        Time.timeScale = value;
+    }
 
-        if(status == 1)
-        {
-            ViewMenu(false);
-            Time.timeScale = status;
-        }
+    public void Pause(int value)
+    {
+        ViewMenu(true);
+        Time.timeScale = value;
     }
 
     public void ExitGame()

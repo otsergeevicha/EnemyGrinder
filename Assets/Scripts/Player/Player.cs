@@ -6,34 +6,30 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private RepairButton _repairButton;
 
-    private int _walletMoney = 0;
+    private int _money = 0;
     
     public event Action<int> ChangedWallet;
     public event Action<bool> MoneyForRepair;
 
     private void Update()
     {
-        CheckCollision();
-
-        if(_walletMoney >= _repairButton.Price)
-            MoneyForRepair?.Invoke(true);
-        else
-            MoneyForRepair?.Invoke(false);
+        Shooting();
+        MoneyForRepair?.Invoke(_money >= _repairButton.Price);
     }
 
     public void SpendMoney(int spendMoney)
     {
-        _walletMoney -= spendMoney;
-        ChangedWallet?.Invoke(_walletMoney);
+        _money -= spendMoney;
+        ChangedWallet?.Invoke(_money);
     }
 
     private void AcceptMoney(int money)
     {
-        _walletMoney += money;
-        ChangedWallet?.Invoke(_walletMoney);
+        _money += money;
+        ChangedWallet?.Invoke(_money);
     }
 
-    private void CheckCollision()
+    private void Shooting()
     {
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);
 

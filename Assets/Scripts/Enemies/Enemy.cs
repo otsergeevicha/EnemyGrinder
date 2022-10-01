@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     public void ChangeStatus()
     {
         _hitEffect.Play();
-        _enemyMovement.UnMove();
+        _enemyMovement.Stop();
         _animator.enabled = false;
         _ragControl.ChangePhysical(false);
         Invoke(nameof(Off), .5f);

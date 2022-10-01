@@ -1929,7 +1929,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 805477889}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: GameManager
+        m_MethodName: Pause
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2574,7 +2574,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 805477889}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: GameManager
+        m_MethodName: Play
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

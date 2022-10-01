@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
         _move = transform.DOMove(target.position, _speed);
     }
 
-    public void UnMove()
+    public void Stop()
     {
         _move.Pause();
     }
